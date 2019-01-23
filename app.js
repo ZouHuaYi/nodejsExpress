@@ -3,7 +3,7 @@
  * @Author: zouhuayi
  * @Date: 2019-01-23 10:25:45
  * @LastEditors: zouhuayi
- * @LastEditTime: 2019-01-23 14:46:59
+ * @LastEditTime: 2019-01-23 15:21:18
  */
 
 var createError = require('http-errors');
@@ -51,5 +51,11 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+console.log("我的git可以工作了")
+console.log("我的git可以工作了")
+
+console.log("我的git可以工作了")
+console.log("我的git可以工作了")
 
 module.exports = app;
