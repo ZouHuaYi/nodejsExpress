@@ -3,7 +3,7 @@
  * @Author: zouhuayi
  * @Date: 2019-01-23 10:25:45
  * @LastEditors: zouhuayi
- * @LastEditTime: 2019-01-23 15:55:10
+ * @LastEditTime: 2019-01-23 17:33:09
  */
 
 var createError = require('http-errors');
@@ -37,7 +37,7 @@ app.use(interceptor);
 // 渲染路由
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/zhy/:id', zhyRouter)
+app.use('/zhy', zhyRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -51,6 +51,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 
 module.exports = app;
