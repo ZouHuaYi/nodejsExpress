@@ -3,7 +3,7 @@
  * @Author: zouhuayi
  * @Date: 2019-01-23 17:29:08
  * @LastEditors: zouhuayi
- * @LastEditTime: 2019-01-24 09:45:29
+ * @LastEditTime: 2019-01-25 17:50:03
  */
 var mysql = require('mysql');
 var config = require('./config');
@@ -18,6 +18,5 @@ pool.on('enqueue', function () {
     console.log('Waiting for available connection slot');
 })
 
-// pool.end(callback) 关闭链接池 - pool.getConnection() 将不会被执行
 
 exports.pool = pool;

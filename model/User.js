@@ -3,7 +3,7 @@
  * @Author: zouhuayi
  * @Date: 2019-01-23 17:29:58
  * @LastEditors: zouhuayi
- * @LastEditTime: 2019-01-24 17:06:24
+ * @LastEditTime: 2019-01-25 17:53:03
  */
 
 var query = require('../utils/dataQuery');
@@ -12,8 +12,8 @@ const TABLE_NAME = 'test_user';
 
 
 User.prototype.find = function (id, callback) {
-    var sql = "SELECT * FROM " + TABLE_NAME + " WHERE id = ?";
-    query(sql, [...id], callback);
+    var sql = "SELECT * FROM :table WHERE id = :id";
+    query(sql, { id: id, table: TABLE_NAME }, callback);
 };
 
 User.prototype.insert = function (data, callback) {
@@ -28,7 +28,6 @@ User.prototype.update = function (id, callback) {
 User.prototype.delete = function (id, callback) {
 
 }
-
 
 
 module.exports = User;

@@ -6,14 +6,14 @@ var user = new User();
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  var userid = '1';
+  var userid = '45';
   user.find(userid, function (err, result) {
     if (err) {
       res.send('not found');
     }
-    // res.send(result.length === 1 ? result[0] : result);
+    res.send(result);
   });
-  res.render('users')
+  // res.render('users')
 });
 
 router.post('/', function (req, res, next) {
