@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../model/User');
+var crypto = require('crypto');
+
 
 var user = new User();
+var md5 = crypto.createHash('md5');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -11,14 +14,15 @@ router.get('/', function (req, res, next) {
     if (err) {
       res.send('not found');
     }
-    res.send(result);
+    // res.send(result);
   });
-  // res.render('users')
+  res.render('users')
 });
 
 router.post('/', function (req, res, next) {
 
   var tim = Math.round(new Date().getTime() / 1000) + '';
+  req.body.password = md5.update(req.body.password).digest('hex');
   var body = {
     ...req.body,
     create_time: tim,

@@ -3,7 +3,7 @@
  * @Author: zouhuayi
  * @Date: 2019-01-24 17:49:40
  * @LastEditors: zouhuayi
- * @LastEditTime: 2019-01-24 17:50:30
+ * @LastEditTime: 2019-01-28 09:47:11
  */
 
 function random(randomFlag, min, max) {
@@ -21,4 +21,5 @@ function random(randomFlag, min, max) {
     }
     return str;
 }
+
 module.exports = random;
