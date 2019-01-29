@@ -3,7 +3,7 @@
  * @Author: zouhuayi
  * @Date: 2019-01-23 10:25:45
  * @LastEditors: zouhuayi
- * @LastEditTime: 2019-01-23 17:33:09
+ * @LastEditTime: 2019-01-29 09:19:12
  */
 
 var createError = require('http-errors');
@@ -15,7 +15,8 @@ var interceptor = require('./middleware/routeInterceptor');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var zhyRouter = require('./routes/zhy')
+var zhyRouter = require('./routes/zhy');
+var joinRouter = require('./routes/join');
 
 var app = express();
 
@@ -37,7 +38,8 @@ app.use(interceptor);
 // 渲染路由
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/zhy', zhyRouter)
+app.use('/zhy', zhyRouter);
+app.use('/join', joinRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
