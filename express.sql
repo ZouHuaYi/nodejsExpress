@@ -10,10 +10,64 @@ Target Server Type    : MYSQL
 Target Server Version : 50725
 File Encoding         : 65001
 
-Date: 2019-01-28 18:02:43
+Date: 2019-01-29 18:13:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `dom_left`
+-- ----------------------------
+DROP TABLE IF EXISTS `dom_left`;
+CREATE TABLE `dom_left` (
+  `id` int(12) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) DEFAULT NULL,
+  `url` varchar(100) DEFAULT NULL,
+  `country` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of dom_left
+-- ----------------------------
+INSERT INTO `dom_left` VALUES ('1', 'Google', 'https://www.google.cm/', 'usa');
+INSERT INTO `dom_left` VALUES ('2', '淘宝', 'https://www.taobao.com/', 'cn');
+INSERT INTO `dom_left` VALUES ('3', '菜鸟教程', 'http://www.runoob.com/', 'cn');
+INSERT INTO `dom_left` VALUES ('4', '微博', 'http://weibo.com/', 'cn');
+INSERT INTO `dom_left` VALUES ('5', 'Facebook', 'https://www.facebook.com/', 'usa');
+INSERT INTO `dom_left` VALUES ('6', 'stackoverflow', 'http://stackoverflow.com/', 'ind');
+INSERT INTO `dom_left` VALUES ('7', '百度', 'http://baidu.com', 'cn');
+
+-- ----------------------------
+-- Table structure for `dom_right`
+-- ----------------------------
+DROP TABLE IF EXISTS `dom_right`;
+CREATE TABLE `dom_right` (
+  `id` int(12) unsigned NOT NULL AUTO_INCREMENT,
+  `l_id` int(12) unsigned DEFAULT NULL,
+  `count` tinyint(8) DEFAULT NULL,
+  `date` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `l_ref` (`l_id`),
+  CONSTRAINT `l_ref` FOREIGN KEY (`l_id`) REFERENCES `dom_left` (`id`) ON DELETE SET NULL ON UPDATE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of dom_right
+-- ----------------------------
+INSERT INTO `dom_right` VALUES ('1', '2', '45', '2019-01-23 09:55:29');
+INSERT INTO `dom_right` VALUES ('2', '2', '56', '2019-01-24 09:56:00');
+INSERT INTO `dom_right` VALUES ('3', '1', '78', '2019-01-25 09:56:25');
+INSERT INTO `dom_right` VALUES ('4', '3', '42', '2019-01-26 09:57:53');
+INSERT INTO `dom_right` VALUES ('5', '6', '23', '2019-01-27 09:58:17');
+INSERT INTO `dom_right` VALUES ('6', '5', '90', '2019-01-28 09:58:41');
+INSERT INTO `dom_right` VALUES ('7', '4', '80', '2019-01-01 09:59:25');
+INSERT INTO `dom_right` VALUES ('8', '4', '67', '2019-01-04 09:59:44');
+INSERT INTO `dom_right` VALUES ('9', '5', '67', '2019-01-19 10:00:11');
+INSERT INTO `dom_right` VALUES ('10', '6', '89', '2019-01-29 10:15:21');
+INSERT INTO `dom_right` VALUES ('11', '5', '76', '2019-01-17 15:36:13');
+INSERT INTO `dom_right` VALUES ('12', null, '55', '2019-01-17 15:42:58');
+INSERT INTO `dom_right` VALUES ('13', null, '56', '2019-01-20 15:44:13');
 
 -- ----------------------------
 -- Table structure for `test_center`

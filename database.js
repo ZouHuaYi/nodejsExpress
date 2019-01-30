@@ -3,7 +3,7 @@
  * @Author: zouhuayi
  * @Date: 2019-01-23 17:29:08
  * @LastEditors: zouhuayi
- * @LastEditTime: 2019-01-25 17:50:03
+ * @LastEditTime: 2019-01-30 23:37:36
  */
 var mysql = require('mysql');
 var config = require('./config');
