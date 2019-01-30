@@ -3,7 +3,7 @@
  * @Author: zouhuayi
  * @Date: 2019-01-23 17:00:42
  * @LastEditors: zouhuayi
- * @LastEditTime: 2019-01-24 15:19:52
+ * @LastEditTime: 2019-01-30 18:00:17
  */
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
         user: 'express',
         password: '111111',
         database: 'express',
-        connectionLimit: 10,
+        connectionLimit: 100,
         supportBigNumbers: true
     }
 }

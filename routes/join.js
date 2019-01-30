@@ -32,4 +32,17 @@ router.get('/right', function (req, res, next) {
 })
 
 
+router.get('/innerTo', function (req, res, next) {
+    join.innerTo(function (err, result) {
+        if (err) {
+            res.send('出错了');
+        }
+        res.send(result);
+    })
+})
+
+
+
+
+
 module.exports = router;

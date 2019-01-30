@@ -21,6 +21,12 @@ Join.prototype.right = function (callback) {
     query(sql, callback);
 }
 
+// 选择一个表插入另外一个
+Join.prototype.innerTo = function (callback) {
+    var sql = 'INSERT INTO website (name, country, url ) SELECT app_name, country,url FROM apps';
+    query(sql, callback);
+}
+
 
 
 module.exports = Join;

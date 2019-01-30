@@ -3,7 +3,7 @@
  * @Author: zouhuayi
  * @Date: 2019-01-23 10:25:45
  * @LastEditors: zouhuayi
- * @LastEditTime: 2019-01-29 09:19:12
+ * @LastEditTime: 2019-01-30 16:26:11
  */
 
 var createError = require('http-errors');
@@ -17,6 +17,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var zhyRouter = require('./routes/zhy');
 var joinRouter = require('./routes/join');
+var insertRouter = require('./routes/insert');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/zhy', zhyRouter);
 app.use('/join', joinRouter);
+app.use('/insert', insertRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
